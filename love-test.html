@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Important Question 💘</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<br>
+<br>
+<br>
+<h5>Syempre pinindot mo, matigas ulo mo e😒</h5>
+<h3>At dahil pinindot mo, may tanong ako sayo😏</h3>
+<h1>Mahal mo ba ako?😗</h1>
+
+<div class="buttons">
+<button onclick="yesLove()">Yes na yes my Love, so sweet 😘💖</button>
+<button onclick="noLove()">No! sino ka ba?🤨</button>
+
+</div>
+
+<div id="result"></div>
+
+<script>
+function yesLove() {
+  document.getElementById("result").innerHTML =
+  "<h2>I knew it 😌❤️</h2><img src='yes.gif' class='media'>";
+}
+
+function noLove() {
+  document.getElementById("result").innerHTML =
+  "<h2>Aba't-- pinindot talaga!😡 Do you wanna die? 🙂🔪</h2><img src='no.png' class='media'>";
+}
+    function goBack() {
+      window.location.href = "index.html";
+    }
+
+</script>
+   <button onclick="goBack()">Back to Home</button>
+   <footer>
+<p>Made with love by your programmer girlfriend 💻❤️</p>
+</footer>
+
+</body>
+</html>

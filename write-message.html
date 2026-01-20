@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Write Me a Message</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="romantic-bg">
+
+  <div class="card">
+    <h1>💌 Leave Me a Message</h1>
+    <p class="soft-text">Write something sweet for me to read anytime 🤍</p>
+
+    <textarea id="messageInput" placeholder="Type your message here..."></textarea>
+
+    <button onclick="saveMessage()">💖 Save Message</button>
+
+    <h3>📜 Your Messages</h3>
+    <div id="messages"></div>
+
+    <button class="back-btn" onclick="goBack()">Back to Home</button>
+  </div>
+
+  <script>
+    const messagesDiv = document.getElementById("messages");
+
+    function loadMessages() {
+      const saved = JSON.parse(localStorage.getItem("loveMessages")) || [];
+      messagesDiv.innerHTML = "";
+
+      saved.forEach(msg => {
+        const p = document.createElement("p");
+        p.className = "saved-message";
+        p.textContent = msg;
+        messagesDiv.appendChild(p);
+      });
+    }
+
+    function saveMessage() {
+      const input = document.getElementById("messageInput");
+      if (input.value.trim() === "") return;
+
+      const saved = JSON.parse(localStorage.getItem("loveMessages")) || [];
+      saved.push(input.value);
+      localStorage.setItem("loveMessages", JSON.stringify(saved));
+
+      input.value = "";
+      loadMessages();
+    }
+
+    function goBack() {
+      window.location.href = "index.html";
+    }
+
+    loadMessages();
+  </script>
+
+</body>
+</html>
